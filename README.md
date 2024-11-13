@@ -13,10 +13,12 @@
 Install dependencies
 
 cd root folder,
+
 npm install
 
 
 Run Server
+
 npm run dev
 
 # Technical stacks
