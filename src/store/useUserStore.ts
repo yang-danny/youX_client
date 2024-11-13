@@ -9,7 +9,7 @@ const userAPI=`${import.meta.env.BACKEND_API_URL}/user`;
 axios.defaults.withCredentials = true;
 
 type User = {
-    id:string;
+    _id:string;
     name:string;
     email:string;
     phone:number;
@@ -19,7 +19,7 @@ type User = {
 }
 
 type UserState = {
-    id:string;
+    _id:string;
     user: User | null;
     isAuthenticated: boolean;
     loading: boolean;
@@ -36,7 +36,7 @@ type UserState = {
 }
 
 export const useUserStore = create<UserState>()(persist((set) => ({
-    id: '',
+    _id: '',
     user: null,
     isAuthenticated: false,
     loading: false,
@@ -54,7 +54,7 @@ export const useUserStore = create<UserState>()(persist((set) => ({
             });
             if (response.data) {   
                 toast.success("Signup successfully...");
-                set({ id:response.data._id,loading: false, user: response.data.name, isAuthenticated: true, role: response.data.role });
+                set({ _id:response.data._id,loading: false, user: response.data.name, isAuthenticated: true, role: response.data.role });
             }
         } catch (error:any) {
             toast.error(error.response.data.message);
@@ -71,7 +71,7 @@ export const useUserStore = create<UserState>()(persist((set) => ({
             });
             if (response.data) { 
                 toast.success("Login successfully...");
-                set({ id:response.data._id, loading: false, user: response.data.name, isAuthenticated: true, role: response.data.role, token:response.data.token });
+                set({ _id:response.data._id, loading: false, user: response.data.name, isAuthenticated: true, role: response.data.role, token:response.data.token });
             }
         } catch (error: any) {
             set({ loading: false });
@@ -152,7 +152,7 @@ export const useUserStore = create<UserState>()(persist((set) => ({
     },
     logout: async () => {
     try {
-    set({   id:'',
+    set({   _id:'',
             user: null,
             isAuthenticated: false,
             loading: false,

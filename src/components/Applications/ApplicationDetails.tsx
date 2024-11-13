@@ -22,7 +22,16 @@ const ApplicationDetails = () => {
     const { id } = useParams();
     const {token, isAuthenticated }=useUserStore()
     const {loading, updateApplicationDetails}=useApplicationStore()
-    const [application, setApplication] = useState({})
+    const [application, setApplication] = useState<ApplicationCreateState>({user:'',
+      type:"",
+      provider:"", 
+      amount:0,
+      income:0,
+      expenses:0,
+      assets:0,
+      liabilities:0,
+      description: "",
+      status:"pending", })
     const [edit, setEdit] = useState(false)
     const [input, setInput] = useState<ApplicationCreateState>({
       user:'',
@@ -57,7 +66,7 @@ const ApplicationDetails = () => {
     const setEditValues =()=>{
       setEdit(true)
       setInput({
-      user:application.user?._id,
+      user:application.user._id,
       type:application.type,
       provider:application.provider, 
       amount:application.amount,
@@ -110,25 +119,25 @@ const ApplicationDetails = () => {
         <div className="mb-4">
           <div className="relative">
           <Label className="font-bold ">Application Name: </Label>
-          <Label htmlFor="name">{application.user?.name}</Label>
+          <Label htmlFor="name">{application.user.name}</Label>
           </div>
         </div>
         <div className="mb-4">
           <div className="relative">
           <Label className="font-bold ">Email: </Label>
-          <Label htmlFor="name">{application.user?.email}</Label>
+          <Label htmlFor="name">{application.user.email}</Label>
           </div>
         </div>
         <div className="mb-4">
           <div className="relative">
             <Label className="font-bold ">Phone: </Label>
-            <Label htmlFor="name">{application.user?.phone}</Label>
+            <Label htmlFor="name">{application.user.phone}</Label>
         </div>
         </div>
         <div className="mb-4">
           <div className="relative">
             <Label className="font-bold ">Role: </Label>
-            <Label htmlFor="name">{application.user?.role}</Label>
+            <Label htmlFor="name">{application.user.role }</Label>
           </div>
         </div>
        </div>

@@ -16,9 +16,9 @@ import {
   } from "@/components/ui/select";
 import { Label } from "../ui/label";
 const CreateApplication = () => {
-    const {id,isAuthenticated,token}=useUserStore()
+    const {_id,isAuthenticated,token}=useUserStore()
     const [input, setInput] = useState<ApplicationCreateState>({
-        user:id,
+        user:_id,
         type:"",
         provider:"", 
         amount:0,

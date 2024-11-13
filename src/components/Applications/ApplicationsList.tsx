@@ -15,7 +15,7 @@ import { useUserStore } from "@/store/useUserStore";
 
 const ApplicationsList = () => {
     const {getApplications, getUserApplications, application } =useApplicationStore()
-    const {id, role, token}=useUserStore()
+    const {_id, role, token}=useUserStore()
     // Check role for loading applications
     useEffect(() => {
      if(role==="Admin")
@@ -23,7 +23,7 @@ const ApplicationsList = () => {
       getApplications(token) 
     else
       // Load user's applications by user ID
-     getUserApplications(id,token)
+     getUserApplications(_id,token)
     }, [])
 
     const arr = Array.from(Object.entries(application), ([key, value]) => value);

@@ -5,14 +5,14 @@ import Users from "./Users";
 
 const Dashboard = () => {
 
-    const {user,isAuthenticated, role}=useUserStore()
+    const {isAuthenticated, role}=useUserStore()
 
     return (
     <> 
     {isAuthenticated?(
         <>
         <section className='heading'>
-        <h2 >Welcome to youX <span className="font-bold">{user!}'s {role}</span> Dashboard</h2> 
+        <h2 >Welcome to youX <span className="font-bold">{role}</span> Dashboard</h2> 
         {role.toLowerCase()==="admin"?(
         <>
         <Users />

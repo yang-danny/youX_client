@@ -10,7 +10,7 @@ import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
 import { useUserStore } from "@/store/useUserStore";
 const UsernameMenu = () => {
-  const { id, user, logout } = useUserStore();
+  const { _id, user, logout } = useUserStore();
   const navigate=useNavigate()
 const logoutUser = () => {
   logout()
@@ -20,7 +20,7 @@ navigate("/")
     <DropdownMenu>
       <DropdownMenuTrigger className="flex items-center px-3 font-bold gap-2 hover:text-orange-500">
         <CircleUserRound className="text-black hover:text-orange-500" />
-        {user!}
+        {user || ''}
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
@@ -32,7 +32,7 @@ navigate("/")
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link to={`/user/${id}`} className="font-bold hover:text-orange-500">
+          <Link to={`/user/${_id}`} className="font-bold hover:text-orange-500">
             User Profile
           </Link>
         </DropdownMenuItem>

@@ -15,13 +15,18 @@ import { useUserStore } from "@/store/useUserStore";
 import {SignupInputState, userSignupSchema} from  "@/schema/userSchema"
 import { Input } from '../ui/input';
 import { Loader2 } from "lucide-react";
+import { any } from 'zod';
   const API=import.meta.env.BACKEND_API_URL
 
   const UserDetails = () => {
     // Get User ID
     const { id } = useParams();
     const {loading,isAuthenticated,updateUserDetails,token}=useUserStore()
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState<SignupInputState>({  name:'',
+      email:"",
+      phone:"", 
+      password: "",
+      role:"",})
     const [edit, setEdit] = useState(false)
     const [input, setInput] = useState<SignupInputState>({
         name:'',
@@ -207,7 +212,7 @@ import { Loader2 } from "lucide-react";
           <div className="mb-4">
             <div className="relative">
             <Label className="font-bold ">Application Name: </Label>
-            <Label htmlFor="name">{user?.name}</Label>
+            <Label htmlFor="name">{user.name}</Label>
             </div>
           </div>
           <div className="mb-4">

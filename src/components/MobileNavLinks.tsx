@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { useUserStore } from "@/store/useUserStore";
 
 const MobileNavLinks = () => {
-  const { id, logout } = useUserStore();
+  const { _id, logout } = useUserStore();
   return (
     <>
       <Link
@@ -13,7 +13,7 @@ const MobileNavLinks = () => {
         Dashboard
       </Link>
       <Link
-        to={`/user/${id}`} 
+        to={`/user/${_id}`} 
         className="flex bg-white items-center font-bold text-black hover:text-orange-500"
       >
         User Profile
