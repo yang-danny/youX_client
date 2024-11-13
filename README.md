@@ -24,16 +24,16 @@ npm run dev
 # Features
 -User
 
-  -Login
+  *Login
   
-  -Signup
+  *Signup
   
-  -Role base permision: Admin/User
+  *Role base permision: Admin/User
 
 
 -Application
 
- -CRUD
+ *CRUD
 
 # Technical stacks
 -Axios for RESTfuul API request
