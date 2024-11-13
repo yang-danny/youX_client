@@ -52,4 +52,6 @@ npm run dev
 # CI/CD
 -Github Actions
 
+# Postman Test Collection
+https://api.postman.com/collections/33053047-b40d2e70-f70f-479c-90d5-9ed6a64931fd?access_key=PMAT-01JCHXT3G199C8F6HHP68DHDA1
 
