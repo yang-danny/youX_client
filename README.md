@@ -1,50 +1,39 @@
-# React + TypeScript + Vite
+# Asset Finance Management Platform -- Client
+  -This is the Assessment Task for youX
+  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# How to start the project
 
-Currently, two official plugins are available:
+1. Git clone this project into your local machine.
+2. Open the project in VS code.
+3. Create .env file for environment secrets. (a copy of sample .env file can be provided)
+4. Open a new Terminal go to folder 'youX_client', enter 'npm install' to install project dependencies, then enter 'npm run dev' to run Web App.
+5. Use a browser to open the link: http://localhost:5173/.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install dependencies
 
-## Expanding the ESLint configuration
+cd root folder,
+npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+Run Server
+npm run dev
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+# Technical stacks
+-Axios for API fetching
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+-Zustand for state management
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+-Zod for schema declaration and validation
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+-Tailwind CSS and shadcn for styling and pre-build components
+
+-React based on Vite
+
+-Sonner for opinionated toast notice
+
+
+# CI/CD
+-Github Actions
+
+
