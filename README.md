@@ -21,8 +21,22 @@ Run Server
 
 npm run dev
 
+# Features
+-User
+
+  -Login
+  
+  -Signup
+  
+  -Role base permision: Admin/User
+
+
+-Application
+
+ -CRUD
+
 # Technical stacks
--Axios for API fetching
+-Axios for RESTfuul API request
 
 -Zustand for state management
 
